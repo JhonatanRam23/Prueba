@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VenadoProject.Models.ViewModels.usuario>
+
+@{
+    ViewBag.Title = "Control Usuarios";
+}
+
+<h2>Registros</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Contraseña
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Fecha nacimiento
+        </th>
+        <th>
+            Tipo de usuario
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.email_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_user.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.email_usuario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.email_usuario }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.email_usuario })
+        </td>
+    </tr>
+}
+
+</table>

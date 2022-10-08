@@ -1,0 +1,33 @@
+﻿@model IEnumerable<VenadoProject.Models.ViewModels.departamento>
+
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Registros</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Nombre del Departamento
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_departamento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.codigo_departamento }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.codigo_departamento }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.codigo_departamento })
+        </td>
+    </tr>
+}
+
+</table>

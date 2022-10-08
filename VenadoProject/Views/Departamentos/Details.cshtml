@@ -1,0 +1,26 @@
+﻿@model VenadoProject.Models.ViewModels.departamento
+
+@{
+    ViewBag.Title = "Detalles ";
+}
+
+<h2>Detalles de los registros</h2>
+
+<div>
+    <h4>departamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_departamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_departamento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.codigo_departamento }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

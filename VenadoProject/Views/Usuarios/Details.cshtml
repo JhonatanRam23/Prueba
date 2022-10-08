@@ -1,0 +1,58 @@
+﻿@model VenadoProject.Models.ViewModels.usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.contraseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contraseña)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_user.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_user.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.email_usuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

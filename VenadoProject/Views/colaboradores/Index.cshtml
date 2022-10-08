@@ -1,0 +1,75 @@
+﻿@model IEnumerable<VenadoProject.Models.ViewModels.colaboradores>
+
+@{
+    ViewBag.Title = "Nomina";
+}
+
+<h2>Registros Colaboradores</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+          Nombres 
+        </th>
+        <th>
+          Apellidos 
+        </th>
+        <th>
+          Direccion
+        </th>
+        <th>
+            Telefono
+        </th>
+        <th>
+            Cantidad de hijos
+        </th>
+        <th>
+            Puesto desempeñado
+        </th>
+        <th>
+            Salario Base Mensual
+        </th>
+        <th>
+            Departamento perteneciente
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion_colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono_colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad_hijos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.puesto_colaborador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salario_mensual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departamento.nombre_departamento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.dpi_colaborador }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.dpi_colaborador }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.dpi_colaborador })
+        </td>
+    </tr>
+}
+
+</table>
